@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_025542) do
+ActiveRecord::Schema.define(version: 2018_08_01_183403) do
 
-  create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "project_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_users_on_project_id"
+    t.index ["user_id"], name: "index_project_users_on_user_id"
+  end
+
+  create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
     t.text "description"
@@ -22,8 +31,9 @@ ActiveRecord::Schema.define(version: 2018_08_01_025542) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+    t.integer "owner_id"
+    t.integer "assignee_id"
     t.integer "project_id"
     t.string "title"
     t.text "description"
@@ -34,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_025542) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "email"
     t.string "firstname"
     t.string "lastname"
@@ -47,4 +57,6 @@ ActiveRecord::Schema.define(version: 2018_08_01_025542) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "project_users", "projects"
+  add_foreign_key "project_users", "users"
 end
