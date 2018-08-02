@@ -1,34 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to projects_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_project_path(@project), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show project</h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt>User:</dt>
+  <dd><%= @project.user_id %></dd>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+  <dt>Title:</dt>
+  <dd><%= @project.title %></dd>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+  <dt>Description:</dt>
+  <dd><%= @project.description %></dd>
 
-<p>
-  <strong>Status:</strong>
-  <%= @project.status %>
-</p>
+  <dt>Status:</dt>
+  <dd><%= @project.status %></dd>
 
-<p>
-  <strong>Deleted:</strong>
-  <%= @project.deleted %>
-</p>
+  <dt>Deleted:</dt>
+  <dd><%= @project.deleted %></dd>
 
-<p>
-  <strong>Created at:</strong>
-  <%= @project.created_at %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+</dl>

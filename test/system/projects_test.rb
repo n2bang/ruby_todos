@@ -14,7 +14,6 @@ class ProjectsTest < ApplicationSystemTestCase
     visit projects_url
     click_on "New Project"
 
-    fill_in "Created At", with: @project.created_at
     fill_in "Deleted", with: @project.deleted
     fill_in "Description", with: @project.description
     fill_in "Status", with: @project.status
@@ -30,7 +29,6 @@ class ProjectsTest < ApplicationSystemTestCase
     visit projects_url
     click_on "Edit", match: :first
 
-    fill_in "Created At", with: @project.created_at
     fill_in "Deleted", with: @project.deleted
     fill_in "Description", with: @project.description
     fill_in "Status", with: @project.status

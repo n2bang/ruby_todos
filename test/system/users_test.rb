@@ -16,7 +16,6 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @user.address
     fill_in "Birthday", with: @user.birthday
-    fill_in "Created At", with: @user.created_at
     fill_in "Deleted", with: @user.deleted
     fill_in "Email", with: @user.email
     fill_in "Firstname", with: @user.firstname
@@ -35,7 +34,6 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @user.address
     fill_in "Birthday", with: @user.birthday
-    fill_in "Created At", with: @user.created_at
     fill_in "Deleted", with: @user.deleted
     fill_in "Email", with: @user.email
     fill_in "Firstname", with: @user.firstname

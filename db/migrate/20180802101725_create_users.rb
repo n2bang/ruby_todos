@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :phone
       t.string :address
       t.integer :deleted
-      t.timestamp :created_at
 
       t.timestamps
     end

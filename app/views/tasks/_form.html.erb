@@ -1,57 +1,68 @@
-<%= form_with(model: task, local: true) do |form| %>
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+<%= form_for(@task, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @task.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h4>
 
       <ul>
-      <% task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+  <div class="form-group">
+    <%= f.label :owner_id, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :owner_id, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :project_id %>
-    <%= form.number_field :project_id %>
+  <div class="form-group">
+    <%= f.label :assignee_id, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :assignee_id, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= f.label :project_id, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :project_id, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="form-group">
+    <%= f.label :title, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :prioritise %>
-    <%= form.number_field :prioritise %>
+  <div class="form-group">
+    <%= f.label :description, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
+  <div class="form-group">
+    <%= f.label :prioritise, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :prioritise, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :deleted %>
-    <%= form.number_field :deleted %>
+  <div class="form-group">
+    <%= f.label :status, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :status, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :created_at %>
-    <%= form.datetime_select :created_at %>
+  <div class="form-group">
+    <%= f.label :deleted, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :deleted, class: "form-control" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

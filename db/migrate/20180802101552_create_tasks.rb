@@ -9,7 +9,6 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.integer :prioritise
       t.integer :status
       t.integer :deleted
-      t.timestamp :created_at
 
       t.timestamps
     end

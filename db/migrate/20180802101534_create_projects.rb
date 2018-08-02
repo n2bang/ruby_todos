@@ -6,7 +6,6 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :status
       t.integer :deleted
-      t.timestamp :created_at
 
       t.timestamps
     end
