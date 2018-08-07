@@ -1,7 +1,7 @@
 #!/bin/bash
 git add .
 
-git commit -am 'update 03/08/2018'
+git commit -am 'active record'
 
 git pull origin master
 

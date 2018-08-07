@@ -66,3 +66,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # my add
 gem 'bootstrap-sass'
 gem 'record_tag_helper', '~> 1.0'
+
