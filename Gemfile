@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # add 09082018
+  gem 'guard-livereload', '~> 2.5', require: false
+  # end 09082018
 end
 
 group :development do
@@ -50,6 +53,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bootstrap-generators'
   gem 'rails_layout'
+  # add 09082018
+  gem 'guard'
+  gem 'guard-zeus'
+  gem 'rack-livereload'
+  # end 09082018
 end
 
 group :test do
