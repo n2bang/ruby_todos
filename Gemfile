@@ -53,10 +53,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bootstrap-generators'
   gem 'rails_layout'
+  gem 'jquery-rails'
   # add 09082018
-  gem 'guard'
-  gem 'guard-zeus'
-  gem 'rack-livereload'
+  # gem 'guard'
+  # gem 'guard-zeus'
+  # gem 'rack-livereload'
   # end 09082018
 end
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 git add .
 
-git commit -am 'active record'
+git commit -am 'update gem jquery'
 
 git pull origin master
 

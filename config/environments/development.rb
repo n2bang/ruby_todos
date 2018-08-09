@@ -62,5 +62,5 @@ Rails.application.configure do
   # myadd
   # config.logger = Logger.new(STDOUT)
   # config.logger = Log4r::Logger.new("Application Log")
-  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  # config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 end
