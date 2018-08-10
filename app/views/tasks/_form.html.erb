@@ -13,45 +13,68 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :assignee_id, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.label :owner_id, class: "control-label" %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.collection_select :owner_id, User.all, :id, :fullname, {prompt: "Select a user"}, {class: "form-control"} %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.label :assignee_id, class: "control-label" %>
+    </div>
     <div class="col-sm-10">
       <%= f.collection_select :assignee_id, User.all, :id, :fullname, {prompt: "Select a user"}, {class: "form-control"} %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :project_id, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.label :project_id, class: "control-label" %>
+    </div>
     <div class="col-sm-10">
       <%= f.collection_select :project_id, Project.all, :id, :title, {prompt: "Select a project"}, {class: "form-control"} %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :title, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.label :title, class: "control-label" %>
+    </div>
     <div class="col-sm-10">
       <%= f.text_field :title, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :description, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.label :description, class: "control-label" %>
+    </div>
     <div class="col-sm-10">
       <%= f.text_area :description, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :prioritise, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.label :prioritise, class: "control-label" %>
+    </div>
     <div class="col-sm-10">
       <%= f.number_field :prioritise, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :status, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.label :status, class: "control-label" %>
+    </div>
     <div class="col-sm-10">
       <%= f.number_field :status, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :deleted, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.label :deleted, class: "control-label" %>
+    </div>
     <div class="col-sm-10">
       <%= f.number_field :deleted, class: "form-control" %>
     </div>

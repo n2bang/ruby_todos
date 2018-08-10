@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -54,11 +54,14 @@ group :development do
   gem 'bootstrap-generators'
   gem 'rails_layout'
   gem 'jquery-rails'
-  # add 09082018
+  # start 09082018
   # gem 'guard'
   # gem 'guard-zeus'
   # gem 'rack-livereload'
   # end 09082018
+  # start 10082018
+  gem 'guard-livereload', '~> 2.5', require: false
+  # end 10082018
 end
 
 group :test do

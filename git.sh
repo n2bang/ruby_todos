@@ -1,7 +1,7 @@
 #!/bin/bash
 git add .
 
-git commit -am 'update gem jquery'
+git commit -am 'Add login'
 
 git pull origin master
 
